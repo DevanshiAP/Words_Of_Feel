@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <td align="center" colspan="5">User Information</td>
+        </tr>
+        <tr>
+            <td>First name</td>
+            <td>Last name</td>
+            <td>email</td>
+            <td>password</td>
+            <td>Date of Registration</td>
+            <td>delete</td>
+            <td>update</td>
+        </tr>
+        {% for i in data %}
+        <tr>
+            <td>{{i.user_first_name}}</td>
+            <td>{{i.user_last_name}}</td>
+            <td>{{i.user_email}}</td>
+            <td>{{i.user_password}}</td>
+            <td>{{i.user_date}}</td>
+            <td><a href="{%url 'delete' i.id %}">delete</a></td>
+            <td><a href="{%url 'update' i.id %}">update</a></td>
+        {%endfor%}
+        </tr>
+    </table>
+</body>
+</html>
